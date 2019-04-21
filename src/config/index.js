@@ -1,4 +1,4 @@
-import api from "./api";
-import router from "./router";
+import api from './api';
+import router from './router';
 
-export { api, router };
+export default { api, router };

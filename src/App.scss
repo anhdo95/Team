@@ -1,1 +1,17 @@
-@import './scss/main.scss';
+// ========== UTILITIES ==========
+@import 'scss/utilities/variables';
+@import 'scss/utilities/mixins';
+@import 'scss/utilities/helpers';
+
+// ========== LAYOUT ==========
+@import 'scss/layout/top-bar';
+@import 'scss/layout/main';
+@import 'scss/layout/footer';
+
+// ========== COMPONENTS ==========
+
+// ========== PAGES ==========
+@import 'scss/pages/home';
+
+// ========== THEMES ==========
+@import 'scss/themes/theme';

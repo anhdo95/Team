@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import channel from "assets/image/channel.png";
-import noneAvatar from "assets/image/channel.png";
+import React, { Component } from 'react';
+import channel from 'assets/image/channel.png';
+import noneAvatar from 'assets/image/channel.png';
 
 export default class Layout extends Component {
   render() {
@@ -10,19 +10,13 @@ export default class Layout extends Component {
           <div class="top-bar__container d-flex h-100 mx-auto">
             <div class="top-bar__logo">
               <a class="d-flex align-items-center h-100 px-2" href="/">
-                <i
-                  class="fa fa-stack-overflow display-4 text-white"
-                  aria-hidden="true"
-                />
+                <i class="fa fa-stack-overflow display-4 text-white" aria-hidden="true" />
                 <span class="top-bar__logo__brand text-white">
                   &nbsp;Sass<b>VietNam</b>
                 </span>
               </a>
             </div>
-            <form
-              action=""
-              class="top-bar__search-bar d-flex align-items-center px-2"
-            >
+            <form action="" class="top-bar__search-bar d-flex align-items-center px-2">
               <div class="input-group input-group-sm">
                 <div class="input-group-prepend">
                   <select class="top-bar__search-bar__channel form-control input-group-text">
@@ -48,15 +42,9 @@ export default class Layout extends Component {
               <li class="top-bar__links__item top-bar__links__item--profile h-100">
                 <a class="d-flex align-items-center h-100" href="/">
                   <div class="avatar">
-                    <img
-                      class="w-100 h-100"
-                      src={noneAvatar}
-                      alt="None avatar"
-                    />
+                    <img class="w-100 h-100" src={noneAvatar} alt="None avatar" />
                   </div>
-                  <div class="repulation text-white font-weight-bold">
-                    &nbsp;10
-                  </div>
+                  <div class="repulation text-white font-weight-bold">&nbsp;10</div>
                   <div class="bronze text-danger font-weight-bold">
                     <span>&nbsp;●</span>
                     <span>5</span>
@@ -74,10 +62,7 @@ export default class Layout extends Component {
                   <i class="fa fa-inbox text-white" aria-hidden="true" />
                 </a>
 
-                <div
-                  class="dropdown-menu dropdown-menu-right"
-                  aria-labelledby="inbox-message"
-                >
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="inbox-message">
                   <div class="alert alert-primary" role="alert">
                     This is a primary alert—check it out!
                   </div>
@@ -94,10 +79,7 @@ export default class Layout extends Component {
               </li>
               <li class="top-bar__links__item h-100">
                 <a href="/">
-                  <i
-                    class="fa fa-question-circle text-white"
-                    aria-hidden="true"
-                  />
+                  <i class="fa fa-question-circle text-white" aria-hidden="true" />
                 </a>
               </li>
               <li class="top-bar__links__item h-100">
@@ -114,11 +96,7 @@ export default class Layout extends Component {
             <nav>
               <a class="left-sidebar__channel d-block" href="/">
                 <div class="left-sidebar__channel__thumbnail mx-auto">
-                  <img
-                    class="img-thumbnail w-100 h-100"
-                    src={channel}
-                    alt="SassVietNam channel"
-                  />
+                  <img class="img-thumbnail w-100 h-100" src={channel} alt="SassVietNam channel" />
                 </div>
                 <div class="left-sidebar__channel__name mt-3 text-center">
                   <h3>SASS Viet Nam</h3>
