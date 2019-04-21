@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SASS VIET NAM</title>
+  <!-- ========== Styles ========== -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <!-- /========== Styles ========== -->
+</head>
+
+<body>
+
+  <header class="top-bar position-fixed w-100">
+    <div class="top-bar__container d-flex h-100 mx-auto">
+      <div class="top-bar__logo">
+        <a class="d-flex align-items-center h-100 px-2" href="#">
+          <i class="fa fa-stack-overflow display-4 text-white" aria-hidden="true"></i>
+          <span class="top-bar__logo__brand text-white">
+            &nbsp;Sass<b>VietNam</b>
+          </span>
+        </a>
+      </div>
+      <form action="" class="top-bar__search-bar d-flex align-items-center px-2">
+        <div class="input-group input-group-sm">
+          <div class="input-group-prepend">
+            <select class="top-bar__search-bar__channel form-control input-group-text">
+              <option selected>All</option>
+              <option value="1">Public</option>
+              <option value="2">SASS Viet Nam</option>
+            </select>
+          </div>
+          <input type="text" class="top-bar__search-bar__textbox form-control" placeholder="Search..." />
+          <button type="button" class="top-bar__search-bar__submit btn btn-primary btn-sm position-absolute">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+      <ol class="top-bar__links d-flex justify-content-end align-items-center">
+        <li class="top-bar__links__item top-bar__links__item--profile h-100">
+          <a class="d-flex align-items-center h-100" href="#">
+            <div class="avatar">
+              <img class="w-100 h-100" src="assets/image/none-avatar.png" alt="None avatar">
+            </div>
+            <div class="repulation text-white font-weight-bold">
+              &nbsp;10
+            </div>
+            <div class="bronze text-danger font-weight-bold">
+              <span>&nbsp;●</span><span>5</span>
+            </div>
+          </a>
+        </li>
+        <li class="top-bar__links__item h-100 dropdown">
+          <a href="#" id="inbox-message" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-inbox text-white" aria-hidden="true"></i>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="inbox-message">
+            <div class="alert alert-primary" role="alert">
+              This is a primary alert—check it out!
+            </div>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+        <li class="top-bar__links__item h-100">
+          <a href="#"><i class="fa fa-trophy text-white" aria-hidden="true"></i></a>
+        </li>
+        <li class="top-bar__links__item h-100">
+          <a href="#"><i class="fa fa-question-circle text-white" aria-hidden="true"></i></a>
+        </li>
+        <li class="top-bar__links__item h-100">
+          <a href="#"><i class="fa fa-list text-white" aria-hidden="true"></i></a>
+        </li>
+      </ol>
+    </div>
+  </header>
+
+  <main class="main mx-auto">
+
+    <div class="left-sidebar position-fixed">
+      <nav>
+        <a class="left-sidebar__channel d-block" href="#">
+          <div class="left-sidebar__channel__thumbnail mx-auto">
+            <img class="img-thumbnail w-100 h-100" src="assets/image/channel.png" alt="SassVietNam channel" />
+          </div>
+          <div class="left-sidebar__channel__name mt-3 text-center">
+            <h3>SASS Viet Nam</h3>
+          </div>
+        </a>
+        <div class="left-sidebar__private-team pb-3 text-center text-muted">
+          <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;Private team
+        </div>
+        <ol class="left-sidebar__links">
+          <li class="left-sidebar__links__item left-sidebar__links__item--active">
+            <a href="#">Questions </a>
+          </li>
+          <li class="left-sidebar__links__item">
+            <a href="#">Tags </a>
+          </li>
+          <li class="left-sidebar__links__item">
+            <a href="#">Users </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <section class="content bg-light">
+      
+    </section>
+
+  </main>
+
+  <footer class="footer bg-dark">Footer</footer>
+
+  <!-- ========== Scripts ========== -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- /========== Scripts ========== -->
+</body>
+
+</html>

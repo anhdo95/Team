@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+public/post-detail.html
+public/assets/image/none-avatar.png
+public/assets/image/logo.png
+public/assets/image/channel.png
