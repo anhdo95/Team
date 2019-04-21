@@ -1,5 +1,8 @@
-import PostDetail from 'containers/PostDetail'
+import Questions from 'containers/Questions';
+import PostDetail from 'containers/PostDetail';
 
 export default [
-  { path: '', page: PostDetail }
-]
+  { path: '/', component: Questions },
+  { path: '/questions', component: Questions },
+  { path: '/questions/:questionId', component: PostDetail },
+];
