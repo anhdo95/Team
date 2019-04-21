@@ -1,0 +1,112 @@
+$links-width: 320px;
+$links-profile-width: 100px;
+
+.top-bar {
+  top: 0;
+  left: 0;
+  height: $top-bar-height;
+  background: $black-color;
+
+  border-top-width: 1px;
+  border-color: $light-black;
+  border-top-style: solid;
+  box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1),
+    0 1px 6px rgba(59, 64, 69, 0.1);
+
+  &__container {
+    max-width: $main-width;
+  }
+
+  /* =====================
+   LOGO
+   ===================== */
+  &__logo {
+    width: $top-bar-logo-width;
+
+    a {
+      .fa-stack-overflow {
+        font-size: 2rem;
+      }
+    }
+
+    &__brand {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* =====================
+   SEARCH BAR
+   ===================== */
+  &__search-bar {
+    flex-grow: 1;
+
+    &__channel {
+      @include top-bar-search-channel;
+
+      &:focus {
+        @include top-bar-search-channel($focus: true);
+      }
+    }
+
+    &__textbox {
+      @include top-bar-search-textbox;
+      @include border-right-radius(0.2rem !important);
+
+      &:focus {
+        @include top-bar-search-textbox($focus: true);
+      }
+
+      &:focus + .top-bar__search-bar__submit {
+        visibility: visible;
+      }
+    }
+
+    &__submit {
+      visibility: hidden;
+      z-index: 4;
+      right: 0;
+
+      @include border-left-radius(0);
+    }
+  }
+
+  /* =====================
+   LINKS
+   ===================== */
+  &__links {
+    width: $links-width;
+
+    &__item {
+      a {
+        display: block;
+        padding: 0.75rem 1rem;
+
+        .fa {
+          font-size: 1.2rem;
+
+          &.fa-inbox {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $top-bar-search-bar-textbox-bg-color;
+      }
+
+      &--profile {
+        width: $links-profile-width;
+
+        .avatar {
+          width: 25px;
+          height: 25px;
+        }
+
+        .repulation,
+        .bronze {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
