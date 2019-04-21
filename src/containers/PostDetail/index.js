@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Avatar from "components/Avatar";
 
-export default class PostDetail extends React {
+export default class PostDetail extends Component {
   render() {
     return (
       <div>
-        <Avatar />
+        <h1>Post Detail</h1>
       </div>
     );
   }
