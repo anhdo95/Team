@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import config from 'config';
+import routes from 'config/router';
 
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min.js';
 import 'popper.js/dist/popper.min.js';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import 'App.scss';
+import 'scss/main.scss';
 
 import Layout from 'containers/Layout';
 
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <Router>
         <Layout>
-          {config.router.map(route => (
+          {routes.map(route => (
             <Route exact path={route.path} component={route.component} />
           ))}
         </Layout>
