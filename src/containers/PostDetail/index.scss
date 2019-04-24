@@ -1,16 +1,91 @@
-.heading {
-  font-size: 1.4rem;
+.row a {
+  font-size: 0.85rem;
 }
 
-.col1 {
-  background-color: red;
-  width: 12.5%;
+#question-header {
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #e4e6e8;
+
+  .post-heading {
+    font-size: 1.4rem;
+  }
+
+  .col1 {
+    background-color: red;
+    width: 12.5%;
+  }
+
+  .col2 {
+    background-color: blue;
+  }
+
+  .col3 {
+    background-color: yellow;
+  }
 }
 
-.col2 {
-  background-color: blue;
+.question-stats {
+  font-size: 0.8rem;
 }
 
-.col3 {
-  background-color: yellow;
+.label-key {
+  color: #9199a1;
+  margin-bottom: 12px;
+}
+
+p {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.tags-col {
+  padding: none;
+}
+
+.label-bold {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.owner {
+  border-color: transparent;
+  background-color: #e1ecf4;
+  color: #2c5777;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  border-width: 1px;
+  border-radius: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding: 0.5rem;
+}
+
+.inline-action {
+  font-size: 0.85rem;
+}
+
+.post-tag {
+  font-size: 0.85rem;
+  color: #666666;
+  background: rgba(102, 102, 102, 0.1);
+  border: 1px solid #666666;;
+  border-radius: 10%;
+  white-space: wrap;
+  display: inline-block;
+  position: relative;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e4e6e8;
+}
+
+.action {
+  font-size: 0.85rem;
+}
+
+.action-item {
+  margin-right: 0.4rem;
+  color: #848d95;
+  cursor: pointer;
 }
