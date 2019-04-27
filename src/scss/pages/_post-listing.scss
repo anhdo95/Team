@@ -1,0 +1,70 @@
+@import '../utilities/core';
+
+%general-padding {
+  padding-left: $content-padding-unit;
+  padding-right: $content-padding-unit;
+}
+
+.post-listing {
+  &__quest {
+    flex: 9;
+  }
+
+  &__headline {
+    @extend %general-padding;
+
+    &__avatar {
+      @include channel-logo-thumb(32px, 32px);
+
+      img {
+        @include channel-logo-img;
+      }
+    }
+
+    &__title {
+      font-size: 1.7rem;
+    }
+
+    &__ask-private a {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+  }
+
+  &__filter {
+    @include divider-border;
+    @extend %general-padding;
+
+    &__answered {
+      font-size: 0.8rem;
+    }
+
+    &__option {
+      font-size: 0.9rem !important;
+      border: 1px solid $post-listing-filter-option-border-color;
+
+      &__more {
+        a {
+          font-size: 0.8rem;
+        }
+      }
+
+      &:hover {
+        color: $post-listing-filter-option-hover-color !important;
+        background-color: $post-listing-filter-option-hover-bg-color !important;
+      }
+
+      &--active, &--active:hover {
+        color: $post-listing-filter-option-active-color !important;
+        background-color: $post-listing-filter-option-active-bg-color !important;
+      }
+    }
+  }
+
+  &__posts {
+  }
+
+  &__right-sidebar {
+    flex: 4;
+  }
+}
