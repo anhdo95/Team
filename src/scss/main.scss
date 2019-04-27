@@ -1,17 +1,10 @@
 // ========== UTILITIES ==========
-@import 'utilities/variables';
-@import 'utilities/mixins';
-@import 'utilities/helpers';
+@import 'utilities/core';
 
 // ========== LAYOUT ==========
 @import 'layout/top-bar';
 @import 'layout/main';
 @import 'layout/footer';
-
-// ========== COMPONENTS ==========
-
-// ========== PAGES ==========
-@import 'pages/home';
 
 // ========== THEMES ==========
 @import 'themes/theme';

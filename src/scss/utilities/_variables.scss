@@ -19,8 +19,19 @@ $top-bar-search-bar-item-focus-color: #adb3b9;
    MAIN
    ===================== */
 $main-width: 1264px;
+$content-padding-unit: 1.5rem;
+$channel-logo-border-radius: 10%;
 
 /* =====================
    LEFT SIDEBAR
    ===================== */
 $left-sidebar-width: 164px;
+
+/* =====================
+   POST-LISTING
+   ===================== */
+$post-listing-filter-option-border-color: #adb3b9;
+$post-listing-filter-option-hover-color: #535960;
+$post-listing-filter-option-hover-bg-color: #b7c0c80d;
+$post-listing-filter-option-active-color: #3b4045;
+$post-listing-filter-option-active-bg-color: #aec0d140;
