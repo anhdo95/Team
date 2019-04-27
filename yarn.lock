@@ -8231,6 +8231,13 @@ react-app-polyfill@^0.2.2:
     raf "3.4.1"
     whatwg-fetch "3.0.0"
 
+react-bem-helper@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/react-bem-helper/-/react-bem-helper-1.4.1.tgz#cb27aeadda020e9fe9d169bfaae1095c559f4cf5"
+  integrity sha1-yyeurdoCDp/p0Wm/quEJXFWfTPU=
+  dependencies:
+    object-assign "^4.1.1"
+
 react-dev-utils@^8.0.0:
   version "8.0.0"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-8.0.0.tgz#7c5b227a45a32ea8ff7fbc318f336cf9e2c6e34c"

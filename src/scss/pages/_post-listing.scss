@@ -1,70 +1,113 @@
 @import '../utilities/core';
 
-%general-padding {
-  padding-left: $content-padding-unit;
-  padding-right: $content-padding-unit;
-}
-
 .post-listing {
-  &__quest {
-    flex: 9;
-  }
+	margin-bottom: 5rem;
 
-  &__headline {
-    @extend %general-padding;
+	&__content {
+		flex: 10;
+		margin-right: $content-padding-unit;
 
-    &__avatar {
-      @include channel-logo-thumb(32px, 32px);
+		&__headline {
+			padding-left: $content-padding-unit;
 
-      img {
-        @include channel-logo-img;
-      }
-    }
+			&__avatar {
+				@include channel-logo-thumb(32px, 32px);
 
-    &__title {
-      font-size: 1.7rem;
-    }
+				img {
+					@include channel-logo-img;
+				}
+			}
 
-    &__ask-private a {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-    }
-  }
+			&__title {
+				font-size: 1.7rem;
+			}
 
-  &__filter {
-    @include divider-border;
-    @extend %general-padding;
+			&__ask-private a {
+				padding: 0.5rem 1rem;
+				font-size: 0.85rem;
+			}
+		}
 
-    &__answered {
-      font-size: 0.8rem;
-    }
+		&__filter {
+			@include divider-border;
+			padding-left: $content-padding-unit;
 
-    &__option {
-      font-size: 0.9rem !important;
-      border: 1px solid $post-listing-filter-option-border-color;
+			&__answered {
+				font-size: 0.8rem;
+			}
 
-      &__more {
-        a {
-          font-size: 0.8rem;
-        }
-      }
+			&__option {
+				font-size: 0.9rem !important;
+				border: 1px solid $post-listing-filter-option-border-color;
 
-      &:hover {
-        color: $post-listing-filter-option-hover-color !important;
-        background-color: $post-listing-filter-option-hover-bg-color !important;
-      }
+				&__more {
+					a {
+						font-size: 0.8rem;
+					}
+				}
 
-      &--active, &--active:hover {
-        color: $post-listing-filter-option-active-color !important;
-        background-color: $post-listing-filter-option-active-bg-color !important;
-      }
-    }
-  }
+				&:hover {
+					color: $post-listing-filter-option-hover-color !important;
+					background-color: $post-listing-filter-option-hover-bg-color !important;
+				}
 
-  &__posts {
-  }
+				&--active,
+				&--active:hover {
+					color: $post-listing-filter-option-active-color !important;
+					background-color: $post-listing-filter-option-active-bg-color !important;
+				}
+			}
+		}
 
-  &__right-sidebar {
-    flex: 4;
-  }
+		&__posts {
+			&__quest-summary {
+				padding: 0.75rem 0 1.5rem 0.75rem;
+				@include divider-border;
+
+				&__stats {
+					margin-right: 0.5rem;
+
+					&--vote,
+					&--answer,
+					&--viewcount {
+						margin-bottom: 0.8rem;
+						font-size: 0.7rem;
+					}
+
+					&--count {
+						font-size: 0.9rem;
+					}
+				}
+
+				&__brief {
+					flex: 11;
+
+					&__title {
+						font-size: 1.09rem;
+						color: $post-listing-posts-quest-summary-stats-brief-title-color !important;
+					}
+
+					&__excerpt {
+						font-size: 0.9rem;
+					}
+
+					&__user-info {
+						a,
+						span {
+							font-size: 0.75rem;
+						}
+
+						&__avatar {
+							width: 32px;
+							height: 32px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__right-sidebar {
+		flex: 4;
+	}
 }
