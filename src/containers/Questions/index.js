@@ -8,6 +8,7 @@ import 'scss/pages/_post-listing.scss'
 
 const bemHelper = (() => {
 	const core = {
+		none: '',
 		postListing: 'post-listing',
 		content: 'post-listing__content',
 		headline: 'post-listing__content__headline',
@@ -15,6 +16,8 @@ const bemHelper = (() => {
 		posts: 'post-listing__content__posts',
 		postsQuestSummary: 'post-listing__content__posts__quest-summary',
 		rightSidebar: 'post-listing__right-sidebar',
+		watchedTags: 'post-listing__right-sidebar__watched-tags',
+		ignoredTags: 'post-listing__right-sidebar__ignored-tags',
 	}
 
 	return new Proxy(
@@ -36,6 +39,10 @@ const bemHelper = (() => {
 			postsQuestSummaryBriefExcerpt: `${core.postsQuestSummary}__brief__excerpt`,
 			postsQuestSummaryBriefUserInfo: `${core.postsQuestSummary}__brief__user-info`,
 			postsQuestSummaryBriefUserInfoAvatar: `${core.postsQuestSummary}__brief__user-info__avatar`,
+			watchedTagsHeader: `${core.watchedTags}__header`,
+			watchedTagsList: `${core.watchedTags}__list`,
+			watchedTagsListItem: `${core.watchedTags}__list-item`,
+			watchedTagsFrequency: `${core.watchedTags}__frequency`,
 		},
 		{
 			get(target, key) {
@@ -48,6 +55,16 @@ const bemHelper = (() => {
 export default class PostListing extends Component {
 	constructor(props) {
 		super(props)
+
+		this.state = {
+			isWatchedTagsEditing: false,
+		}
+	}
+
+	handleWatchedTagsEdit = () => {
+		this.setState((prevState) => ({
+			isWatchedTagsEditing: !prevState.isWatchedTagsEditing,
+		}))
 	}
 
 	renderHeadLine() {
@@ -157,25 +174,25 @@ export default class PostListing extends Component {
 									What's food customs in your country's traditional meals that may shock foreigners?
 								</a>
 							</h3>
-							<div {...bemHelper.postsQuestSummaryBriefExcerpt({ extra: 'mb-2' })}>
+							<div {...bemHelper.postsQuestSummaryBriefExcerpt({ extra: 'mb-3' })}>
 								Tags are vital for organizing questions so that they can be found later. They also
 								make it possible for you to follow and search particular topics. What tags are
 								available to use and where are they ...
 							</div>
 							<div>
-								<a href="/" className="badge badge-secondary text-lowercase mr-1">
+								<a href="/" className="tag mr-1">
 									Redux
 								</a>
-								<a href="/" className="badge badge-secondary text-lowercase mr-1">
+								<a href="/" className="tag mr-1">
 									ReactJS
 								</a>
-								<a href="/" className="badge badge-secondary text-lowercase mr-1">
+								<a href="/" className="tag mr-1">
 									Flux
 								</a>
-								<a href="/" className="badge badge-secondary text-lowercase mr-1">
+								<a href="/" className="tag mr-1">
 									State
 								</a>
-								<a href="/" className="badge badge-secondary text-lowercase mr-1">
+								<a href="/" className="tag mr-1">
 									Best-Practice
 								</a>
 							</div>
@@ -196,8 +213,8 @@ export default class PostListing extends Component {
 										<div>
 											<a href="/">Anh Do Dinh</a>
 										</div>
-										<span class="repulation font-weight-bold">10</span>
-										<span class="bronze text-danger font-weight-bold">
+										<span className="repulation font-weight-bold">10</span>
+										<span className="bronze text-danger font-weight-bold">
 											<span>&nbsp;●</span>
 											<span>5</span>
 										</span>
@@ -211,8 +228,169 @@ export default class PostListing extends Component {
 		)
 	}
 
+	renderWatchedTags() {
+		const { isWatchedTagsEditing } = this.state
+		const tags = ['Redux', 'ReactJS', 'Flux', 'State']
+
+		console.log('isWatchedTagsEditing', isWatchedTagsEditing)
+
+		return (
+			<div {...bemHelper.watchedTags({ extra: 'card' })}>
+				<div {...bemHelper.watchedTagsHeader({ extra: 'card-header d-flex text-muted fs-09' })}>
+					<div className="d-flex">
+						<i className="fa fa-eye mr-1" aria-hidden="true" />
+						<div className=""> Watched Tags on SASS Viet Nam</div>
+					</div>
+					<a
+						href="javascript:void"
+						className="ml-2 text-muted"
+						onClick={this.handleWatchedTagsEdit}
+					>
+						{isWatchedTagsEditing ? 'cancel' : 'edit'}
+					</a>
+				</div>
+				<div {...bemHelper.watchedTagsList({ extra: 'card-body' })}>
+					<div
+						{...bemHelper.none({
+							extra: {
+								'd-none': !isWatchedTagsEditing,
+								'd-flex justify-content-between text-muted fs-075 mb-1': isWatchedTagsEditing,
+							},
+						})}
+					>
+						<div>TAG</div>
+						<div>NOTIFICATIONS</div>
+					</div>
+					{tags.map((tag) => (
+						<div
+							{...bemHelper.watchedTagsListItem({
+								extra: {
+									'd-flex justify-content-between align-items-center mb-1 fs-075': isWatchedTagsEditing,
+									'd-inline mr-1': !isWatchedTagsEditing,
+								},
+							})}
+						>
+							<a
+								href="/"
+								{...bemHelper.none({
+									extra: {
+										tag: true,
+										'd-table mr-1': isWatchedTagsEditing,
+										'mb-1': !isWatchedTagsEditing,
+									},
+								})}
+							>
+								{tag}
+							</a>
+							<div
+								{...bemHelper.none({
+									extra: {
+										'd-none': !isWatchedTagsEditing,
+									},
+								})}
+							>
+								<button
+									id="btn-notify"
+									type="button"
+									{...bemHelper.watchedTagsFrequency({
+										extra: 'dropdown-toggle',
+									})}
+									data-toggle="dropdown"
+								>
+									Daily&nbsp;
+								</button>
+								<div
+									{...bemHelper.filterOptionMore({
+										extra: 'dropdown-menu dropdown-menu-right',
+									})}
+									aria-labelledby="btn-notify"
+								>
+									<a className="dropdown-item" href="/">
+										None
+									</a>
+									<a className="dropdown-item" href="/">
+										15 min
+									</a>
+									<a className="dropdown-item" href="/">
+										Daily
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		)
+	}
+
+	renderIgnoredTags() {
+		return (
+			<div {...bemHelper.ignoredTags({ extra: 'card mt-3' })}>
+				<div
+					{...bemHelper.ignoredTags({
+						extra: 'card-header d-flex justify-content-between text-muted fs-09',
+					})}
+				>
+					<div className="d-flex">
+						<i className="fa fa-ban mr-1" />
+						<div className=""> Ignored Tags</div>
+					</div>
+					<a href="/" className="ml-2 text-muted">
+						edit
+					</a>
+				</div>
+				<div className="card-body">
+					<a href="/" className="tag mr-1">
+						Redux
+					</a>
+					<a href="/" className="tag mr-1">
+						ReactJS
+					</a>
+					<a href="/" className="tag mr-1">
+						Flux
+					</a>
+					<a href="/" className="tag mr-1">
+						State
+					</a>
+					<a href="/" className="tag mr-1">
+						Best-Practice
+					</a>
+				</div>
+			</div>
+		)
+	}
+
+	renderRelatedTags() {
+		return (
+			<div className="mt-4">
+				<h4 className="h5 font-weight-light">Related Tags</h4>
+				<a href="/" className="d-table tag mt-1">
+					Stackoverflow-for-teams
+				</a>
+				<a href="/" className="d-table tag mt-1">
+					Customs
+				</a>
+				<a href="/" className="d-table tag mt-1">
+					Programming
+				</a>
+				<a href="/" className="d-table tag mt-1">
+					Best-Practive
+				</a>
+				<a href="/" className="d-table fs-09 mt-2">
+					more related tags
+				</a>
+			</div>
+		)
+	}
+
 	renderRightSidebar() {
-		return <div {...bemHelper.rightSidebar({ extra: 'bg-info' })} />
+		return (
+			<div {...bemHelper.rightSidebar()}>
+				{this.renderWatchedTags()}
+				{this.renderIgnoredTags()}
+				{this.renderRelatedTags()}
+			</div>
+		)
 	}
 
 	render() {

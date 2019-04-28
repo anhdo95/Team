@@ -6,9 +6,10 @@ $links-profile-width: 100px;
   left: 0;
   height: $top-bar-height;
   background: $black-color;
+  z-index: $top-bar-z-index;
 
   border-top-width: 1px;
-  border-color: $light-black;
+  border-color: $light-black-color;
   border-top-style: solid;
   box-shadow: 0 1px 0 rgba(12, 13, 14, 0.1),
     0 1px 6px rgba(59, 64, 69, 0.1);

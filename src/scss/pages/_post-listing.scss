@@ -109,5 +109,22 @@
 
 	&__right-sidebar {
 		flex: 4;
+
+		&__watched-tags,
+		&__ignored-tags {
+			@include box-shadow(0, 2px, 8px, rgba(59, 64, 69, 0.1));
+    }
+
+    &__watched-tags {
+      &__frequency {
+        background-color: initial;
+        outline: none;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
 	}
 }

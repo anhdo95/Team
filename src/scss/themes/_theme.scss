@@ -100,3 +100,20 @@ body {
 a:hover {
   text-decoration: none;
 }
+
+.fs-07 { font-size: 0.7rem !important; }
+.fs-075 { font-size: 0.75rem !important; }
+.fs-08 { font-size: 0.8rem !important; }
+.fs-085 { font-size: 0.85rem !important; }
+.fs-09 { font-size: 0.9rem !important; }
+.fs-095 { font-size: 0.95rem !important; }
+
+.tag {
+  color: $light-black-color;
+  background-color: $light-gray-color;
+  text-transform: lowercase;
+  border: 1px solid $gray-color;
+  font-size: 0.75rem;
+  padding: 0.25rem;
+  @include border-radius(0.2rem);
+}

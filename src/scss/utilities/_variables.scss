@@ -2,13 +2,14 @@
    COMMON COLORS
    ===================== */
 $black-color: #242729;
-$light-black: #666666;
+$light-black-color: #666666;
 $gray-color: #535a60;
 $light-gray-color: #e4e6e8;
 
 /* =====================
    TOP BAR
    ===================== */
+$top-bar-z-index: 1000;
 $top-bar-height: 50px;
 $top-bar-logo-width: 165px;
 $top-bar-search-bar-channel-color: #d6d9dc;

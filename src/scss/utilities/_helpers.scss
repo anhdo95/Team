@@ -32,7 +32,7 @@
 @mixin channel-logo-thumb($width, $height) {
   width: $width;
   height: $height;
-  background-color: $light-black;
+  background-color: $light-black-color;
   @include border-radius($channel-logo-border-radius);
   @include box-shadow(0, 2px, 8px, rgba(59, 64, 69, 0.2));
 }
