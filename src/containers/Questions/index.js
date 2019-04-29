@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import BEMHelper from 'react-bem-helper'
 
-import channel from 'assets/image/channel.png'
+import HeadLine from './HeadLine'
+
 import noneAvatar from 'assets/image/none-avatar.png'
 
-import 'scss/pages/_post-listing.scss'
+import './index.scss'
 
 const bemHelper = (() => {
 	const core = {
 		none: '',
 		postListing: 'post-listing',
 		content: 'post-listing__content',
-		headline: 'post-listing__content__headline',
 		filter: 'post-listing__content__filter',
 		posts: 'post-listing__content__posts',
 		postsQuestSummary: 'post-listing__content__posts__quest-summary',
@@ -23,9 +23,6 @@ const bemHelper = (() => {
 	return new Proxy(
 		{
 			...core,
-			headlineAvatar: `${core.headline}__avatar`,
-			headlineTitle: `${core.headline}__title`,
-			headlineAskPrivate: `${core.headline}__ask-private`,
 			filterAnswered: `${core.filter}__answered`,
 			filterOption: `${core.filter}__option`,
 			filterOptionMore: `${core.filter}__option__more`,
@@ -65,25 +62,6 @@ export default class PostListing extends Component {
 		this.setState((prevState) => ({
 			isWatchedTagsEditing: !prevState.isWatchedTagsEditing,
 		}))
-	}
-
-	renderHeadLine() {
-		return (
-			<div {...bemHelper.headline({ extra: 'd-flex align-items-center justify-content-between' })}>
-				<div className="d-flex">
-					<div {...bemHelper.headlineAvatar({ extra: 'mr-2' })}>
-						<img className="w-100 h-100" src={channel} alt="channel" />
-					</div>
-					<h1 {...bemHelper.headlineTitle()}>SASS Viet Nam Questions</h1>
-				</div>
-				<div {...bemHelper.headlineAskPrivate()}>
-					<a className="btn btn-primary" href="/">
-						<i className="fa fa-key" aria-hidden="true" />
-						&nbsp;Ask Private Question
-					</a>
-				</div>
-			</div>
-		)
 	}
 
 	renderFilter() {
@@ -231,8 +209,6 @@ export default class PostListing extends Component {
 	renderWatchedTags() {
 		const { isWatchedTagsEditing } = this.state
 		const tags = ['Redux', 'ReactJS', 'Flux', 'State']
-
-		console.log('isWatchedTagsEditing', isWatchedTagsEditing)
 
 		return (
 			<div {...bemHelper.watchedTags({ extra: 'card' })}>
@@ -397,7 +373,7 @@ export default class PostListing extends Component {
 		return (
 			<div {...bemHelper.postListing({ extra: 'd-flex' })}>
 				<div {...bemHelper.content()}>
-					{this.renderHeadLine()}
+					<HeadLine />
 					{this.renderFilter()}
 					{this.renderPosts()}
 				</div>

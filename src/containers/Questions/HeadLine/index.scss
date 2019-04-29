@@ -1,0 +1,16 @@
+@import '../../../scss/utilities/core';
+
+.post-detail-questions-headline {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: $content-padding-unit;
+
+	&__avatar {
+		@include channel-logo-thumb(32px, 32px);
+
+		img {
+			@include channel-logo-img;
+		}
+	}
+}
