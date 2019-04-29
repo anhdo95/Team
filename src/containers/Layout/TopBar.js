@@ -17,8 +17,8 @@ export default class TopBar extends Component {
           <form action="" className="top-bar__search-bar d-flex align-items-center px-2">
             <div className="input-group input-group-sm">
               <div className="input-group-prepend">
-                <select className="top-bar__search-bar__channel form-control input-group-text">
-                  <option selected>All</option>
+                <select defaultValue={0} className="top-bar__search-bar__channel form-control input-group-text">
+                  <option value="0">All</option>
                   <option value="1">Public</option>
                   <option value="2">SASS Viet Nam</option>
                 </select>

@@ -15,8 +15,8 @@ export default class Posts extends PureComponent {
 
 		return (
 			<div className="post-detail-questions-posts">
-				{data.map((item) => (
-					<div className="post-detail-questions-posts__container">
+				{data.map((item, index) => (
+					<div className="post-detail-questions-posts__container" key={index}>
 						<div className="text-muted mr-3">
 							<div className="text-center fs-07 p-1 mb-2">
 								<div className="fs-09">1000</div>
