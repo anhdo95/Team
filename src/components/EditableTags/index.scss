@@ -1,0 +1,21 @@
+@import '../../scss/utilities/core';
+
+.editable-tags {
+	@include box-shadow(0, 2px, 8px, rgba(59, 64, 69, 0.1));
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__frequency {
+		background-color: initial;
+		outline: none;
+		border: none;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
