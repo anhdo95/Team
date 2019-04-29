@@ -1,0 +1,26 @@
+@import '../../../scss/utilities/core';
+
+.post-detail-questions-posts {
+	&__container {
+		display: flex;
+		padding: 0.75rem 0 1.5rem 0.75rem;
+		@include divider-border;
+	}
+
+	&__brief {
+		flex: 11;
+
+		&__title {
+			font-size: 1.09rem;
+			font-weight: 500;
+			color: $post-listing-posts-quest-summary-stats-brief-title-color !important;
+		}
+
+		&__userinfo {
+			&__avatar {
+				width: 32px;
+				height: 32px;
+			}
+		}
+	}
+}

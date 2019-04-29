@@ -3,8 +3,7 @@ import BEMHelper from 'react-bem-helper'
 
 import HeadLine from './HeadLine'
 import Filter from './Filter'
-
-import noneAvatar from 'assets/image/none-avatar.png'
+import Posts from './Posts'
 
 import './index.scss'
 
@@ -13,8 +12,6 @@ const bemHelper = (() => {
 		none: '',
 		postListing: 'post-listing',
 		content: 'post-listing__content',
-		posts: 'post-listing__content__posts',
-		postsQuestSummary: 'post-listing__content__posts__quest-summary',
 		rightSidebar: 'post-listing__right-sidebar',
 		watchedTags: 'post-listing__right-sidebar__watched-tags',
 		ignoredTags: 'post-listing__right-sidebar__ignored-tags',
@@ -23,16 +20,6 @@ const bemHelper = (() => {
 	return new Proxy(
 		{
 			...core,
-			postsQuestSummaryStats: `${core.postsQuestSummary}__stats`,
-			postsQuestSummaryStatsCount: `${core.postsQuestSummary}__stats--count`,
-			postsQuestSummaryStatsVote: `${core.postsQuestSummary}__stats--vote`,
-			postsQuestSummaryStatsAnswer: `${core.postsQuestSummary}__stats--answer`,
-			postsQuestSummaryStatsViewCount: `${core.postsQuestSummary}__stats--viewcount`,
-			postsQuestSummaryBrief: `${core.postsQuestSummary}__brief`,
-			postsQuestSummaryBriefTitle: `${core.postsQuestSummary}__brief__title`,
-			postsQuestSummaryBriefExcerpt: `${core.postsQuestSummary}__brief__excerpt`,
-			postsQuestSummaryBriefUserInfo: `${core.postsQuestSummary}__brief__user-info`,
-			postsQuestSummaryBriefUserInfoAvatar: `${core.postsQuestSummary}__brief__user-info__avatar`,
 			watchedTagsHeader: `${core.watchedTags}__header`,
 			watchedTagsList: `${core.watchedTags}__list`,
 			watchedTagsListItem: `${core.watchedTags}__list-item`,
@@ -59,88 +46,6 @@ export default class PostListing extends Component {
 		this.setState((prevState) => ({
 			isWatchedTagsEditing: !prevState.isWatchedTagsEditing,
 		}))
-	}
-
-	renderPosts() {
-		const data = new Array(10).fill(null)
-		return (
-			<div {...bemHelper.posts()}>
-				{data.map((item) => (
-					<div {...bemHelper.postsQuestSummary({ extra: 'd-flex' })}>
-						<div {...bemHelper.postsQuestSummaryStats({ extra: 'text-muted' })}>
-							<div {...bemHelper.postsQuestSummaryStatsVote({ extra: 'text-center' })}>
-								<div {...bemHelper.postsQuestSummaryStatsCount()}>1000</div>
-								<span>votes</span>
-							</div>
-							<div {...bemHelper.postsQuestSummaryStatsAnswer({ extra: 'text-center' })}>
-								<div {...bemHelper.postsQuestSummaryStatsCount()}>40</div>
-								<span>answers</span>
-							</div>
-							<div {...bemHelper.postsQuestSummaryStatsViewCount({ extra: 'text-center' })}>
-								<span>9292 views</span>
-							</div>
-						</div>
-						<div {...bemHelper.postsQuestSummaryBrief()}>
-							<h3>
-								<a
-									href="/"
-									{...bemHelper.postsQuestSummaryBriefTitle({ extra: 'font-weight-light' })}
-								>
-									What's food customs in your country's traditional meals that may shock foreigners?
-								</a>
-							</h3>
-							<div {...bemHelper.postsQuestSummaryBriefExcerpt({ extra: 'mb-3' })}>
-								Tags are vital for organizing questions so that they can be found later. They also
-								make it possible for you to follow and search particular topics. What tags are
-								available to use and where are they ...
-							</div>
-							<div>
-								<a href="/" className="tag mr-1">
-									Redux
-								</a>
-								<a href="/" className="tag mr-1">
-									ReactJS
-								</a>
-								<a href="/" className="tag mr-1">
-									Flux
-								</a>
-								<a href="/" className="tag mr-1">
-									State
-								</a>
-								<a href="/" className="tag mr-1">
-									Best-Practice
-								</a>
-							</div>
-							<div {...bemHelper.postsQuestSummaryBriefUserInfo({ extra: 'float-right' })}>
-								<div>
-									<a href="/" className="text-muted">
-										asked <span title="2019-04-17 08:30:56Z">Apr 17 at 8:30</span>
-									</a>
-								</div>
-								<div className="d-flex">
-									<a
-										href="/"
-										{...bemHelper.postsQuestSummaryBriefUserInfoAvatar({ extra: 'mr-2' })}
-									>
-										<img src={noneAvatar} className="w-100 h-100" alt="" />
-									</a>
-									<div className="">
-										<div>
-											<a href="/">Anh Do Dinh</a>
-										</div>
-										<span className="repulation font-weight-bold">10</span>
-										<span className="bronze text-danger font-weight-bold">
-											<span>&nbsp;●</span>
-											<span>5</span>
-										</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				))}
-			</div>
-		)
 	}
 
 	renderWatchedTags() {
@@ -312,7 +217,7 @@ export default class PostListing extends Component {
 				<div {...bemHelper.content()}>
 					<HeadLine />
 					<Filter />
-					{this.renderPosts()}
+					<Posts />
 				</div>
 				{this.renderRightSidebar()}
 			</div>

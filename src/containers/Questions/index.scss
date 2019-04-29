@@ -6,53 +6,6 @@
 	&__content {
 		flex: 10;
 		margin-right: $content-padding-unit;
-
-		&__posts {
-			&__quest-summary {
-				padding: 0.75rem 0 1.5rem 0.75rem;
-				@include divider-border;
-
-				&__stats {
-					margin-right: 0.5rem;
-
-					&--vote,
-					&--answer,
-					&--viewcount {
-						margin-bottom: 0.8rem;
-						font-size: 0.7rem;
-					}
-
-					&--count {
-						font-size: 0.9rem;
-					}
-				}
-
-				&__brief {
-					flex: 11;
-
-					&__title {
-						font-size: 1.09rem;
-						color: $post-listing-posts-quest-summary-stats-brief-title-color !important;
-					}
-
-					&__excerpt {
-						font-size: 0.9rem;
-					}
-
-					&__user-info {
-						a,
-						span {
-							font-size: 0.75rem;
-						}
-
-						&__avatar {
-							width: 32px;
-							height: 32px;
-						}
-					}
-				}
-			}
-		}
 	}
 
 	&__right-sidebar {
