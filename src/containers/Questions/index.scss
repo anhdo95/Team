@@ -7,37 +7,6 @@
 		flex: 10;
 		margin-right: $content-padding-unit;
 
-		&__filter {
-			@include divider-border;
-			padding-left: $content-padding-unit;
-
-			&__answered {
-				font-size: 0.8rem;
-			}
-
-			&__option {
-				font-size: 0.9rem !important;
-				border: 1px solid $post-listing-filter-option-border-color;
-
-				&__more {
-					a {
-						font-size: 0.8rem;
-					}
-				}
-
-				&:hover {
-					color: $post-listing-filter-option-hover-color !important;
-					background-color: $post-listing-filter-option-hover-bg-color !important;
-				}
-
-				&--active,
-				&--active:hover {
-					color: $post-listing-filter-option-active-color !important;
-					background-color: $post-listing-filter-option-active-bg-color !important;
-				}
-			}
-		}
-
 		&__posts {
 			&__quest-summary {
 				padding: 0.75rem 0 1.5rem 0.75rem;

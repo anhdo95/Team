@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import BEMHelper from 'react-bem-helper'
 
 import HeadLine from './HeadLine'
+import Filter from './Filter'
 
 import noneAvatar from 'assets/image/none-avatar.png'
 
@@ -12,7 +13,6 @@ const bemHelper = (() => {
 		none: '',
 		postListing: 'post-listing',
 		content: 'post-listing__content',
-		filter: 'post-listing__content__filter',
 		posts: 'post-listing__content__posts',
 		postsQuestSummary: 'post-listing__content__posts__quest-summary',
 		rightSidebar: 'post-listing__right-sidebar',
@@ -23,9 +23,6 @@ const bemHelper = (() => {
 	return new Proxy(
 		{
 			...core,
-			filterAnswered: `${core.filter}__answered`,
-			filterOption: `${core.filter}__option`,
-			filterOptionMore: `${core.filter}__option__more`,
 			postsQuestSummaryStats: `${core.postsQuestSummary}__stats`,
 			postsQuestSummaryStatsCount: `${core.postsQuestSummary}__stats--count`,
 			postsQuestSummaryStatsVote: `${core.postsQuestSummary}__stats--vote`,
@@ -62,66 +59,6 @@ export default class PostListing extends Component {
 		this.setState((prevState) => ({
 			isWatchedTagsEditing: !prevState.isWatchedTagsEditing,
 		}))
-	}
-
-	renderFilter() {
-		return (
-			<div
-				{...bemHelper.filter({ extra: 'd-flex align-items-center justify-content-between py-4' })}
-			>
-				<div>100 questions</div>
-				<div>
-					<a href="/" {...bemHelper.filterAnswered({ extra: 'mr-3' })}>
-						Answer questions
-					</a>
-					<div className="btn-group" role="group">
-						<button
-							type="button"
-							{...bemHelper.filterOption({
-								modifiers: 'active',
-								extra: 'btn btn-outline-secondary',
-							})}
-							title="The most recently asked questions"
-						>
-							Newest
-						</button>
-						<button
-							type="button"
-							{...bemHelper.filterOption({ extra: 'btn btn-outline-secondary' })}
-						>
-							Active
-						</button>
-
-						<div className="btn-group" role="group">
-							<button
-								id="btn-filter-more"
-								type="button"
-								{...bemHelper.filterOption({ extra: 'btn btn-outline-secondary dropdown-toggle' })}
-								data-toggle="dropdown"
-								aria-haspopup="true"
-								aria-expanded="false"
-							>
-								More&nbsp;
-							</button>
-							<div
-								{...bemHelper.filterOptionMore({ extra: 'dropdown-menu dropdown-menu-right' })}
-								aria-labelledby="btn-filter-more"
-							>
-								<a className="dropdown-item" href="/">
-									Bounties
-								</a>
-								<a className="dropdown-item" href="/">
-									Votes
-								</a>
-								<a className="dropdown-item" href="/">
-									Frequent
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		)
 	}
 
 	renderPosts() {
@@ -374,7 +311,7 @@ export default class PostListing extends Component {
 			<div {...bemHelper.postListing({ extra: 'd-flex' })}>
 				<div {...bemHelper.content()}>
 					<HeadLine />
-					{this.renderFilter()}
+					<Filter />
 					{this.renderPosts()}
 				</div>
 				{this.renderRightSidebar()}

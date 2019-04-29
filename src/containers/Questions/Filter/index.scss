@@ -1,0 +1,27 @@
+@import '../../../scss/utilities/core';
+
+
+.post-listing-questions-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include divider-border;
+  padding-left: $content-padding-unit;
+
+  &__option {
+    background-color: initial;
+    font-size: 0.8rem !important;
+    border: 1px solid $post-listing-filter-option-border-color !important;
+
+    &:hover {
+      color: $post-listing-filter-option-hover-color !important;
+      background-color: $post-listing-filter-option-hover-bg-color !important;
+    }
+
+    &--active,
+    &--active:hover {
+      color: $post-listing-filter-option-active-color !important;
+      background-color: $post-listing-filter-option-active-bg-color !important;
+    }
+  }
+}
