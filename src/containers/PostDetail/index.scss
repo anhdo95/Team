@@ -1,91 +1,59 @@
-.row a {
-  font-size: 0.85rem;
-}
+@import '../../scss/utilities/core';
 
-#question-header {
-  padding-bottom: 1.2rem;
-  border-bottom: 1px solid #e4e6e8;
+.post-detail {
+	padding-left: $content-padding-unit;
+	padding-right: $content-padding-unit;
 
-  .post-heading {
-    font-size: 1.4rem;
-  }
+	&__content {
+		margin-top: 1rem;
+		margin-bottom: 5rem;
+	}
 
-  .col1 {
-    background-color: red;
-    width: 12.5%;
-  }
+	&__votecell {
+		margin-top: -0.5rem;
 
-  .col2 {
-    background-color: blue;
-  }
+		&__up {
+			@include voting-shape(32px, bottom);
+		}
 
-  .col3 {
-    background-color: yellow;
-  }
-}
+		&__down {
+			@include voting-shape(32px, top);
+		}
 
-.question-stats {
-  font-size: 0.8rem;
-}
+		&__favorite {
+			color: $voting-color;
 
-.label-key {
-  color: #9199a1;
-  margin-bottom: 12px;
-}
+			&.active {
+				color: $voting-active-color;
+			}
 
-p {
-  margin-top: 0;
-  font-size: 0.9rem;
-}
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
 
-.tags-col {
-  padding: none;
-}
+	&__postcell {
+		&__description {
+			display: flex;
+			@include divider-border;
 
-.label-bold {
-  font-weight: bold;
-  font-size: 0.85rem;
-}
+			&__people {
+				flex: 1;
+			}
+		}
 
-.owner {
-  border-color: transparent;
-  background-color: #e1ecf4;
-  color: #2c5777;
-  cursor: pointer;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  border-width: 1px;
-  border-radius: 3px;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding: 0.5rem;
-}
+		&__owner {
+			display: flex;
 
-.inline-action {
-  font-size: 0.85rem;
-}
+			a {
+				display: block;
+				font-size: 0.85rem;
+				padding: 0.25rem 0.5rem;
+			}
+		}
+	}
 
-.post-tag {
-  font-size: 0.85rem;
-  color: #666666;
-  background: rgba(102, 102, 102, 0.1);
-  border: 1px solid #666666;;
-  border-radius: 10%;
-  white-space: wrap;
-  display: inline-block;
-  position: relative;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e4e6e8;
-}
-
-.action {
-  font-size: 0.85rem;
-}
-
-.action-item {
-  margin-right: 0.4rem;
-  color: #848d95;
-  cursor: pointer;
+	&__comments {
+	}
 }

@@ -1,42 +1,59 @@
-@mixin divider-border($bottom: true) {
-  @if $bottom {
-    border-bottom: 1px solid $light-gray-color;
-  } @else {
-    border-top: 1px solid $light-gray-color;
+@mixin voting-shape($size, $direction) {
+	width: $size;
+	height: $size;
+	border-width: $size / 2;
+	border-style: solid;
+	border-color: transparent;
+  border-#{$direction}-color: $voting-color;
+
+  &:hover {
+    cursor: pointer;
   }
+
+  &.active {
+    border-#{$direction}-color: $voting-active-color;
+  }
+}
+
+@mixin divider-border($bottom: true) {
+	@if $bottom {
+		border-bottom: 1px solid $light-gray-color;
+	} @else {
+		border-top: 1px solid $light-gray-color;
+	}
 }
 
 @mixin top-bar-search-channel($focus: false) {
-  color: $top-bar-search-bar-channel-color;
-  background-color: $gray-color;
-  border-color: $gray-color;
+	color: $top-bar-search-bar-channel-color;
+	background-color: $gray-color;
+	border-color: $gray-color;
 
-  @if $focus {
-    z-index: 1;
-    border-color: $top-bar-search-bar-item-focus-color;
-    @include box-shadow(0, 0, 0, rgba(255, 255, 255, 0.3), $spread: 4px);
-  }
+	@if $focus {
+		z-index: 1;
+		border-color: $top-bar-search-bar-item-focus-color;
+		@include box-shadow(0, 0, 0, rgba(255, 255, 255, 0.3), $spread: 4px);
+	}
 }
 
 @mixin top-bar-search-textbox($focus: false) {
-  color: $top-bar-search-bar-channel-color;
-  background-color: $top-bar-search-bar-textbox-bg-color;
-  border-color: $top-bar-search-bar-textbox-bg-color;
+	color: $top-bar-search-bar-channel-color;
+	background-color: $top-bar-search-bar-textbox-bg-color;
+	border-color: $top-bar-search-bar-textbox-bg-color;
 
-  @if $focus {
-    border-color: $top-bar-search-bar-item-focus-color;
-    @include box-shadow(0, 0, 0, rgba(255, 255, 255, 0.3), $spread: 4px);
-  }
+	@if $focus {
+		border-color: $top-bar-search-bar-item-focus-color;
+		@include box-shadow(0, 0, 0, rgba(255, 255, 255, 0.3), $spread: 4px);
+	}
 }
 
 @mixin channel-logo-thumb($width, $height) {
-  width: $width;
-  height: $height;
-  background-color: $light-black-color;
-  @include border-radius($channel-logo-border-radius);
-  @include box-shadow(0, 2px, 8px, rgba(59, 64, 69, 0.2));
+	width: $width;
+	height: $height;
+	background-color: $light-black-color;
+	@include border-radius($channel-logo-border-radius);
+	@include box-shadow(0, 2px, 8px, rgba(59, 64, 69, 0.2));
 }
 
 @mixin channel-logo-img() {
-  @include border-radius($channel-logo-border-radius);
+	@include border-radius($channel-logo-border-radius);
 }
