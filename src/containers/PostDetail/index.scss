@@ -2,12 +2,8 @@
 
 .post-detail {
 	padding-left: $content-padding-unit;
-	padding-right: $content-padding-unit;
-
-	&__content {
-		margin-top: 1rem;
-		margin-bottom: 5rem;
-	}
+  padding-right: $content-padding-unit;
+  margin-bottom: 5rem;
 
 	&__votecell {
 		margin-top: -0.5rem;
@@ -55,5 +51,20 @@
 	}
 
 	&__comments {
+    &__delete {
+      display: none;
+    }
+
+    ul li {
+      @include divider-border;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover > .post-detail__comments__delete {
+        display: initial;
+      }
+    }
 	}
 }
