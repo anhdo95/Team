@@ -1,6 +1,6 @@
 @import '../../../scss/utilities/core';
 
-.post-detail-questions-posts {
+.questions-posts {
 	&__container {
 		display: flex;
 		padding: 0.75rem 0 1.5rem 0.75rem;
@@ -13,7 +13,7 @@
 		&__title {
 			font-size: 1.09rem;
 			font-weight: 500;
-			color: $post-listing-posts-quest-summary-stats-brief-title-color !important;
+			color: $questions-posts-quest-summary-stats-brief-title-color !important;
 		}
 
 		&__userinfo {

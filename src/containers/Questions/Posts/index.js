@@ -14,9 +14,9 @@ export default class Posts extends PureComponent {
 		})
 
 		return (
-			<div className="post-detail-questions-posts">
+			<div className="questions-posts">
 				{data.map((item, index) => (
-					<div className="post-detail-questions-posts__container" key={index}>
+					<div className="questions-posts__container" key={index}>
 						<div className="text-muted mr-3">
 							<div className="text-center fs-07 p-1 mb-2">
 								<div className="fs-09">1000</div>
@@ -30,9 +30,9 @@ export default class Posts extends PureComponent {
 								<div>9292 views</div>
 							</div>
 						</div>
-						<div className="post-detail-questions-posts__brief">
+						<div className="questions-posts__brief">
 							<h3 className="mb-2">
-								<a href="/" className="post-detail-questions-posts__brief__title">
+								<a href="/questions/1" className="questions-posts__brief__title">
 									What's food customs in your country's traditional meals that may shock foreigners?
 								</a>
 							</h3>
@@ -58,14 +58,14 @@ export default class Posts extends PureComponent {
 									Best-Practice
 								</a>
 							</div>
-							<div className="post-detail-questions-posts__brief__userinfo float-right">
+							<div className="questions-posts__brief__userinfo float-right">
 								<div>
 									<a href="/" className="text-muted fs-075">
 										asked <span title="2019-04-17 08:30:56Z">Apr 17 at 8:30</span>
 									</a>
 								</div>
 								<div className="d-flex">
-									<a href="/" className="post-detail-questions-posts__brief__userinfo__avatar mr-2">
+									<a href="/" className="questions-posts__brief__userinfo__avatar mr-2">
 										<img src={noneAvatar} className="w-100 h-100" alt="" />
 									</a>
 									<div className="fs-075">

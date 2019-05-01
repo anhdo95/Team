@@ -76,8 +76,8 @@ export default class PostListing extends Component {
 
 	render() {
 		return (
-			<div className="post-listing d-flex">
-				<div className="post-listing__content">
+			<div className="questions d-flex">
+				<div className="questions__content">
 					<HeadLine />
 					<Filter />
 					<Posts />

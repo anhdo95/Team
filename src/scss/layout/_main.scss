@@ -58,6 +58,7 @@
    CONTENT
    ===================== */
   .content {
+    min-height: 80vh;
     padding: $content-padding-unit 0;
     margin-left: $left-sidebar-width;
     border-left: 1px solid #d6d9dc;

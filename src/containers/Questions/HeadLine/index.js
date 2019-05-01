@@ -6,9 +6,9 @@ import './index.scss'
 export default class HeadLine extends PureComponent {
 	render() {
 		return (
-			<div className="post-detail-questions-headline">
+			<div className="questions-headline">
 				<div className="d-flex">
-					<div className="post-detail-questions-headline__avatar mr-2">
+					<div className="questions-headline__avatar mr-2">
 						<img className="w-100 h-100" src={channel} alt="channel" />
 					</div>
 					<h1 className="h3">SASS Viet Nam Questions</h1>
