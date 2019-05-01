@@ -39,6 +39,19 @@ class EditableTags extends PureComponent {
 		)
 	}
 
+	renderAdditionalForm() {
+		return (
+			<div className="input-group mt-4">
+				<input type="text" className="form-control" />
+				<div className="input-group-append">
+					<button className="btn btn-primary" type="button">
+						<i className="fa fa-plus" aria-hidden="true" />
+					</button>
+				</div>
+			</div>
+		)
+	}
+
 	renderReadOnlyTags() {
 		return (
 			<div className="card-body">
@@ -82,6 +95,44 @@ class EditableTags extends PureComponent {
 						</div>
 					</div>
 				))}
+				{this.renderAdditionalForm()}
+			</div>
+		)
+	}
+
+	renderRemovableTags() {
+		return (
+			<div className="card-body">
+				{this.props.tags.map((tag) => (
+					<a href="/" className="tag mr-1" key={tag.name}>
+						{tag.name} <i className="fa fa-times-circle" aria-hidden="true" />
+					</a>
+				))}
+				{this.renderAdditionalForm()}
+				<div className="mt-2 fs-08">
+					<div className="custom-control custom-radio d-flex align-items-center">
+						<input
+							type="radio"
+							id="customRadio1"
+							name="customRadio"
+							className="custom-control-input"
+						/>
+						<label className="custom-control-label" for="customRadio1">
+							Hide questions in your ignored tags
+						</label>
+					</div>
+					<div className="custom-control custom-radio d-flex align-items-center">
+						<input
+							type="radio"
+							id="customRadio2"
+							name="customRadio"
+							className="custom-control-input"
+						/>
+						<label className="custom-control-label" for="customRadio2">
+							Gray out questions in your ignored tags
+						</label>
+					</div>
+				</div>
 			</div>
 		)
 	}
@@ -96,10 +147,10 @@ class EditableTags extends PureComponent {
 				return this.renderEditableTags()
 
 			case TAG_TYPE.IGNORED:
-				return this.renderEditableTags()
+				return this.renderRemovableTags()
 
 			default:
-				return this.renderEditableTags()
+				return null
 		}
 	}
 
