@@ -8,8 +8,43 @@ class VoteCell extends PureComponent {
 		super(props)
 	}
 
+	renderFavorite() {
+		const { display, actives, favoriteCount } = this.props
+
+		if (!display.favorite) return null
+
+		const favoriteClass = classNames('votecell__icon mt-3', {
+			'votecell__icon--favorited': actives.favorite,
+		})
+
+		return (
+			<div className={favoriteClass}>
+				<div>
+					<i className="fa fa-star" aria-hidden="true" />
+				</div>
+				<div className="mt-1 fs-08">{favoriteCount}</div>
+			</div>
+		)
+	}
+
+	renderAccept() {
+		const { display, actives } = this.props
+
+		if (!display.accept) return null
+
+		const acceptClass = classNames('votecell__icon mt-3', {
+			'votecell__icon--accepted': actives.accept,
+		})
+
+		return (
+			<div className={acceptClass}>
+				<i class="fa fa-check" aria-hidden="true" />
+			</div>
+		)
+	}
+
 	render() {
-		const { extraClass, actives, viewCount, favoriteCount } = this.props
+		const { extraClass, actives, viewCount } = this.props
 
 		const voteCellClass = classNames('votecell text-center', extraClass)
 
@@ -21,21 +56,13 @@ class VoteCell extends PureComponent {
 			active: actives.down,
 		})
 
-		const favoriteClass = classNames('votecell__favorite ', {
-			active: actives.favorite,
-		})
-
 		return (
 			<div className={voteCellClass}>
 				<div className={upClass} />
 				<div className="text-muted font-weight-light py-3">{viewCount}</div>
 				<div className={downClass} />
-				<div className={favoriteClass}>
-					<div>
-						<i className="fa fa-star" aria-hidden="true" />
-					</div>
-					<div className="mt-1 fs-08">{favoriteCount}</div>
-				</div>
+				{this.renderFavorite()}
+				{this.renderAccept()}
 			</div>
 		)
 	}
@@ -43,6 +70,10 @@ class VoteCell extends PureComponent {
 
 VoteCell.defaultProps = {
 	extraClass: '',
+	display: {
+		favorite: false,
+		accept: false,
+	},
 	actives: {
 		up: false,
 		down: false,

@@ -9,11 +9,15 @@
 		@include voting-shape(32px, bottom);
 	}
 
-	&__favorite {
+	&__icon {
 		color: $voting-color;
 
-		&.active {
-			color: $voting-active-color;
+		&--favorited {
+			color: $favorite-active-color;
+		}
+
+		&--accepted {
+			color: $accept-active-color;
 		}
 
 		&:hover {
