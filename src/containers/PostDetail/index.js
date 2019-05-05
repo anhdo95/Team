@@ -8,6 +8,17 @@ import QuestionStats from './QuestionStats'
 import './index.scss'
 
 export default class PostDetail extends Component {
+	renderAddAnswer() {
+		return (
+			<div className="mt-3">
+				<a className="btn btn-primary py-2 px-3 fs-085" href="/">
+					<i className="fa fa-key" aria-hidden="true" />
+					&nbsp;Add Another Answer in SASS Viet Nam
+				</a>
+			</div>
+		)
+	}
+
 	render() {
 		return (
 			<div className="post-detail">
@@ -16,6 +27,7 @@ export default class PostDetail extends Component {
 					<div className="col-9">
 						<Demand />
 						<Answers />
+						{this.renderAddAnswer()}
 					</div>
 					<div className="col-3">
 						<QuestionStats />

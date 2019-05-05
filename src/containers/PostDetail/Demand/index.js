@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import VoteCell from 'components/VoteCell'
 import Profile from 'components/Profile'
+import PostMenu from 'components/PostMenu'
+import Comments from 'components/Comments'
 
 import Description from './Description'
-import Menu from './Menu'
-import Comments from './Comments'
 
 import './index.scss'
 
@@ -13,6 +13,9 @@ export default class Demand extends Component {
 	renderVoteCell() {
 		const props = {
 			extraClass: 'mt-1',
+			display: {
+				favorite: true,
+			},
 			actives: {
 				up: false,
 				down: false,
@@ -43,6 +46,39 @@ export default class Demand extends Component {
 		return <Profile {...props} />
 	}
 
+	renderComments() {
+		const list = [
+			{
+				id: 1,
+				text: `First of all, they always have clear, actual objectives and believe in themselves -
+      They take responsibility with their goals strictly, To be better doing these target.
+      They definitely never complain about challenging and obstacles ahead. - In addtion,
+      they should control their management time well - In relationships, they have to choose
+      to make friends who are already sharing their experiences and opinions to all of the
+      fields. - Last but not least, mistakes surely happen overwhelmingly. But they will be
+      considerably nice lessons that they should comprehend from them`,
+				commentator: 'AnhDo',
+				date: 'Apr 16 at 14:27',
+				actions: {
+					edit: true,
+					delete: true,
+				},
+			},
+			{
+				id: 2,
+				text: `Keep an open mind and try to see things through your host culture’s eyes Make an effort to learn the local language Push yourself to make local friends Try to achieve a sense of stability in your life Maintain a sense of humor Get involved in the local community`,
+				commentator: 'AnhDo',
+				date: 'Apr 16 at 14:27',
+				actions: {
+					edit: true,
+					delete: false,
+				},
+			},
+		]
+
+		return <Comments list={list} />
+	}
+
 	render() {
 		const postText = `I agreed with that statement. Throughout human society, being successful is always
     desirable for everybody. But what's exactly the key to success? Some people
@@ -59,11 +95,11 @@ export default class Demand extends Component {
 					<p className="fs-085 mb-3">{postText}</p>
 					{this.renderDescription()}
 					<div className="py-4 fs-085 d-flex justify-content-between border-bottom">
-						<Menu />
+						<PostMenu />
 						{this.renderProfile()}
 					</div>
 
-					<Comments />
+					{this.renderComments()}
 				</div>
 			</div>
 		)
