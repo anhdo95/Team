@@ -1,18 +1,24 @@
 @mixin voting-shape($size, $direction) {
 	width: $size;
-	height: $size;
-	border-width: $size / 2;
+	height: $size / 2;
+  border-width: $size / 2;
+  border-#{$direction}-width: 0;
 	border-style: solid;
 	border-color: transparent;
-  border-#{$direction}-color: $voting-color;
 
-  &:hover {
-    cursor: pointer;
-  }
+	@if $direction == bottom {
+    border-top-color: $voting-color;
+	} @else if $direction == top {
+		border-bottom-color: $voting-color;
+	}
 
-  &.active {
-    border-#{$direction}-color: $voting-active-color;
-  }
+	&:hover {
+		cursor: pointer;
+	}
+
+	&.active {
+		border-#{$direction}-color: $voting-active-color;
+	}
 }
 
 @mixin divider-border($bottom: true) {

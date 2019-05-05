@@ -1,0 +1,23 @@
+@import '../../scss/utilities/core';
+
+.votecell {
+	&__up {
+		@include voting-shape(32px, top);
+	}
+
+	&__down {
+		@include voting-shape(32px, bottom);
+	}
+
+	&__favorite {
+		color: $voting-color;
+
+		&.active {
+			color: $voting-active-color;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
