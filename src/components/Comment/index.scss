@@ -1,0 +1,15 @@
+@import '../../scss/utilities/core';
+
+.comment {
+	&:hover {
+		cursor: pointer;
+	}
+
+	&:hover > .comment__delete {
+		display: initial;
+	}
+
+	&__delete {
+		display: none;
+	}
+}
