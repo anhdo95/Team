@@ -1,0 +1,19 @@
+@import '../../../../scss/utilities/core';
+
+.post-detail-description {
+	display: flex;
+
+	&__people {
+		flex: 1;
+	}
+
+	&__owner {
+		display: flex;
+
+		a {
+			display: block;
+			font-size: 0.85rem;
+			padding: 0.25rem 0.5rem;
+		}
+	}
+}
