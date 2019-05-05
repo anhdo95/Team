@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 
 import './index.scss'
 
-class Menu extends PureComponent {
+class PostMenu extends PureComponent {
 	render() {
 		return (
 			<div>
@@ -23,4 +23,6 @@ class Menu extends PureComponent {
 	}
 }
 
-export default Menu
+PostMenu.defaultProps = {}
+
+export default PostMenu
